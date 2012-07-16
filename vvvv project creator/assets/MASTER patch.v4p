@@ -1,0 +1,77 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta27.2.dtd" >
+   <PATCH nodename="C:\Users\Will\Documents\vvvv project creator\assets\MASTER patch.v4p" systemname="MASTER patch" filename="C:\Users\Will\Documents\vvvv project creator\assets\MASTER patch.v4p">
+   <BOUNDS type="Window" left="2340" top="5820" width="10695" height="8220">
+   </BOUNDS>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="0">
+   <BOUNDS type="Node" left="2595" top="6315" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2595" top="6315" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="13065" top="9000" width="6120" height="5055">
+   </BOUNDS>
+   <PIN pinname="Windowed Depthbuffer Format" slicecount="1" values="D24X8">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="3660" top="5865" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="View" dstnodeid="0" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Projection" dstnodeid="0" dstpinname="Projection">
+   </LINK>
+   <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="2640" top="5205" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Layer Template Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1">
+   </PIN>
+   <PIN pinname="Layer 1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Layer" dstnodeid="0" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="PerfMeter (Debug)" filename="%VVVV%\lib\nodes\modules\Debug\PerfMeter (Debug).v4p" nodename="PerfMeter (Debug)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="3015" top="4800" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AxisAndGrid (DX9)" filename="%VVVV%\lib\nodes\modules\EX9\AxisAndGrid (DX9).v4p" nodename="AxisAndGrid (DX9)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="2880" top="4425" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Layer" dstnodeid="2" dstpinname="Layer 3">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Layer" dstnodeid="2" dstpinname="Layer 2">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="5" systemname="IOBox (Node)">
+   <BOUNDS type="Node" left="2775" top="3765" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2775" top="3765" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Layer 1|" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Output Node" dstnodeid="2" dstpinname="Layer 1">
+   </LINK>
+   </PATCH>
